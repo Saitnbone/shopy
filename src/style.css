@@ -6,12 +6,23 @@ body {
   background-color: #1c1c1c;
   color: white;
   margin: 0;
-  padding: 25px 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: 500;
+  font-style: normal;
+  margin: 0;
 }
 
 .container {
-  width: 1140px;
-  margin: 0 auto;
+  inline-size: 1140px;
+  margin-inline-start: auto;
+  margin-inline-end: auto;
   padding: 0 15px;
 }
 
@@ -23,6 +34,18 @@ a {
   font-size: 14px;
   color: white;
   text-decoration: none;
+}
+
+p {
+  margin: 0;
+}
+
+p + p {
+  margin-block-start: 15px;
+}
+
+img {
+  max-inline-size: 100%;
 }
 
 .btn {
@@ -44,17 +67,19 @@ a {
 
 /* Стили для проекта */
 
+/* Стили для шапки сайта */
+
 .header {
+  position: relative;
   display: flex;
+  padding: 25px 0;
+  z-index: 10;
 }
 
 .header__container {
   display: flex;
   justify-content: space-between;
   align-items: center;
-}
-
-.header__logo {
 }
 
 .header__navigation {
@@ -80,4 +105,84 @@ a {
 .header__link--active {
   font-weight: bold;
   opacity: 1;
+}
+
+/* Стили для секции 'Welcome' */
+
+.welcome {
+  margin-block-start: -100px;
+  padding: 240px 0;
+  background-image: url("./images/welcome-bg.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  min-block-size: 100vh;
+  box-sizing: border-box;
+}
+
+.welcome__text {
+  inline-size: 550px;
+}
+
+.welcome__subtitle {
+  font-size: 14px;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin-block-end: 7px;
+}
+
+.welcome__title {
+  font-size: 58px;
+  line-height: 67px;
+}
+
+.welcome__desc {
+  margin: 40px 0;
+  font-size: 18px;
+  opacity: 0.7;
+}
+
+/* Стили для секции с карточками */
+
+.food__container {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  flex-wrap: wrap;
+  padding: 100px 0;
+}
+
+.food-list__card {
+  inline-size: 260px;
+  background-color: rgb(49, 47, 48);
+  overflow: hidden;
+  border-radius: 10px;
+  text-align: center;
+}
+
+.food-list__card:hover {
+  cursor: pointer;
+}
+
+.food-list__card-img {
+  inline-size: 100%;
+  block-size: 175px;
+  object-fit: cover;
+}
+
+.food-list__card-text-wrapper {
+  display: flex;
+  flex-direction: column;
+  padding: 20px 30px;
+}
+
+.food-list__card-title {
+  font-size: 20px;
+  line-height: 23px;
+}
+
+.food-list__card-text {
+  font-size: 16px;
+  line-height: 19px;
+  opacity: 0.7;
 }

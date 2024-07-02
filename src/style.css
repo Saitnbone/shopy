@@ -1,5 +1,11 @@
 /* Общие стили */
 
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
 body {
   font-family: "Roboto", sans-serif;
   font-size: 14px;
@@ -186,3 +192,114 @@ img {
   line-height: 19px;
   opacity: 0.7;
 }
+
+/* Секция заказа */
+
+.order {
+  background-color: rgb(49, 47, 48);
+}
+
+.order__container {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 60px 0;
+}
+
+.order__desc {
+  max-inline-size: 371px;
+  display: flex;
+  flex-direction: column;
+}
+
+.order__title {
+  font-size: 43px;
+}
+
+.order__text {
+  font-size: 16px;
+  opacity: 0.7;
+  margin-block-start: 24px;
+}
+
+.price-block {
+  display: flex;
+  gap: 6px;
+  margin-block-start: 13px;
+  margin-block-end: 11px;
+}
+
+.order__price {
+  font-size: 20px;
+  color: #f6762c;
+  letter-spacing: 0.1em;
+}
+
+.order__price--old {
+  font-size: 16px;
+  color: #f6762c;
+  opacity: 0.5;
+  letter-spacing: 0.1em;
+  text-decoration-line: line-through;
+}
+
+/* Стили для секции продуктов */
+
+.products {
+  padding-top: 150px;
+}
+
+.products__container {
+  display: grid;
+  grid-template-columns: repeat(2, 555px);
+  gap: 30px;
+  justify-self: center;
+}
+
+.product__card {
+  block-size: 300px;
+  display: flex;
+  flex-direction: column;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  padding: 63px 30px 0 290px;
+}
+
+.product__card:nth-child(even) {
+  padding-left: 50px;
+  padding-right: 290px;
+}
+
+.product-coffee {
+  background-image: url("./images/product-1.jpg");
+}
+
+.product-pizza {
+  background-image: url("./images/product-2.jpg");
+}
+
+.product-burger {
+  background-image: url("./images/product-3.jpg");
+}
+
+.product-papa {
+  background-image: url("./images/product-4.jpg");
+}
+
+.product__card-title {
+  font-size: 30px;
+}
+
+.product__card-desc {
+  margin-block-start: 20px;
+  opacity: 0.7;
+}
+
+.product-btn {
+  inline-size: 141px;
+  block-size: 39px;
+  font-size: 12px;
+}
+
+/* Медиазапросы для проекта */

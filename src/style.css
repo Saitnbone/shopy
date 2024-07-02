@@ -26,13 +26,15 @@ h6 {
 }
 
 .container {
-  inline-size: 1140px;
+  max-inline-size: 1140px;
   margin-inline-start: auto;
   margin-inline-end: auto;
   padding: 0 15px;
 }
 
 ul {
+  margin: 0;
+  padding: 0;
   list-style: none;
 }
 
@@ -72,12 +74,11 @@ img {
 }
 
 /* Стили для проекта */
-
 /* Стили для шапки сайта */
 
 .header {
   position: relative;
-  display: flex;
+  /* display: flex; */
   padding: 25px 0;
   z-index: 10;
 }
@@ -85,6 +86,7 @@ img {
 .header__container {
   display: flex;
   justify-content: space-between;
+  /* justify-content: space-around; */
   align-items: center;
 }
 
@@ -193,7 +195,7 @@ img {
   opacity: 0.7;
 }
 
-/* Секция заказа */
+/* Стили для секции заказа */
 
 .order {
   background-color: rgb(49, 47, 48);
@@ -253,7 +255,8 @@ img {
   display: grid;
   grid-template-columns: repeat(2, 555px);
   gap: 30px;
-  justify-self: center;
+  justify-content: center;
+  /* justify-self: center; */
 }
 
 .product__card {
@@ -302,4 +305,242 @@ img {
   font-size: 12px;
 }
 
+/* Стили для секции feedback */
+
+.feedback__container {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding-block-start: 146px;
+}
+
+.feedback__blockquote {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  inline-size: 370px;
+  margin: 0;
+}
+
+.feedback__blockquote::before {
+  content: url("./images/icons/quote.svg");
+}
+
+.feedback__text {
+  font-size: 16px;
+  opacity: 0.7;
+  margin-block-start: 37px;
+}
+
+.feedback__cite {
+  font-size: 24px;
+  font-style: normal;
+  margin-block-start: 27px;
+}
+
+.feedback__sub {
+  font-size: 12px;
+}
+
+/* Стили для download */
+
+.download {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin-block-start: 195px;
+  background-color: rgb(49, 47, 48);
+  padding: 62px 0;
+}
+
+.download__title {
+  font-size: clamp(2.25rem, 2.1633rem + 0.37vw, 2.5rem);
+}
+
+/* Стили для блока footer */
+
+.footer__container {
+  display: grid;
+  grid-template-columns: 1fr 3fr 1fr;
+  grid-template-areas: contacts nav socials;
+  padding: 126px 0 140px 0;
+}
+
+.footer__contacts {
+  display: flex;
+  flex-direction: column;
+  gap: 11px;
+}
+
+.footer__logo {
+  block-size: 72px;
+  inline-size: 54px;
+}
+
+.footer__link {
+  font-size: 14px;
+  opacity: 0.7;
+}
+
+.footer__link-mail::before {
+  content: url("./images/icons/mail.svg");
+  margin-inline-end: 10px;
+}
+
+.footer__link-web::before {
+  content: url("./images/icons/global.svg");
+  margin-inline-end: 10px;
+}
+
+.footer__nav {
+  display: flex;
+  justify-content: space-around;
+}
+
+.footer__nav-block {
+  display: flex;
+  flex-direction: column;
+}
+
+.footer__title {
+  font-size: 16px;
+  margin-block-end: 14px;
+}
+
+.footer__nav-list {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.footer__nav-list-item {
+  opacity: 0.7;
+}
+
+.footer__social-icons {
+  display: flex;
+  gap: 10px;
+}
+
 /* Медиазапросы для проекта */
+
+@media (width <= 1200px) {
+  /* Медиазапросы для секции с карточками */
+  .food__container {
+    display: grid;
+    justify-content: center;
+    grid-template-columns: repeat(2, auto);
+    gap: 35px;
+  }
+
+  .food-list__card {
+    inline-size: 350px;
+  }
+
+  /* Медиазапросы для секции заказа */
+  .order__container {
+    flex-direction: column;
+  }
+
+  .order__desc {
+    align-items: center;
+  }
+
+  /*  Медиазапросы для секции с продуктами */
+  .products__container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .product__card {
+    max-inline-size: 555px;
+  }
+
+  /* Медиазапросы для блока footer */
+  .footer__container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+  }
+
+  .footer__logo {
+    margin: auto;
+  }
+
+  .footer__nav {
+    flex-direction: column;
+    text-align: center;
+    gap: 25px;
+  }
+
+  .footer__social-icons {
+    justify-content: center;
+  }
+}
+
+@media (width <= 1180px) {
+  .feedback__container {
+    flex-direction: column;
+    gap: 70px;
+  }
+}
+
+@media (width <= 720px) {
+  .welcome {
+    margin-block-start: -287px;
+    padding-block-start: 350px;
+    padding-block-end: 50px;
+  }
+
+  .header__container {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .header__list {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .header__btn {
+    display: none;
+  }
+
+  .welcome {
+    margin-block-start: -287px;
+    padding-block-start: 350px;
+    padding-block-end: 50px;
+  }
+
+  .welcome__text {
+    inline-size: 250px;
+  }
+
+  .food__container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 35px;
+  }
+
+  .download {
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+  }
+}
+
+@media (width <= 500px) {
+  .product__card {
+    padding-block-start: 39px;
+    padding-inline-start: 204px;
+  }
+  .product__card:nth-child(even) {
+    padding-inline-end: 184px;
+  }
+}
